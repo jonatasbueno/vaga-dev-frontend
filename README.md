@@ -3,7 +3,7 @@
 ### Detalhes do teste:
 [Figma](https://www.figma.com/design/tY5s2KK19hcHNENJNyE1lx/Vaga-Front-end?node-id=0-1&m=dev&t=pz3OpILGhmk7lXLw-1)
 
-Desenvolva uma pequena aplicação seguindo o template do figma acima, crie um login utilizando uma [API](https://reqres.in/) pública para simular o login e um dashboard para listar os usuários utilizando o [Graphql](https://github.com/graphql-kit/graphql-apis).
+Desenvolva uma pequena aplicação seguindo o template do figma acima, crie um login utilizando uma [API](https://reqres.in/) pública para simular o login e um dashboard para listar os usuários.
 Você irá realizar um **fork** neste repositório e após o termino do desenvolvimento, realizar um **pull request** para análise do time. Não deixe para fazer o commit apenas no final, nossa equipe irá avaliar seu código desde o seu primeiro commit.
 
 Pedimos que trabalhe sozinho e não divulgue o resultado na internet.
