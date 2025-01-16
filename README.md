@@ -22,12 +22,15 @@ Pedimos que trabalhe sozinho e não divulgue o resultado na internet.
 * TypeScript
 * Git / Github
 
-### 1. Clonar Repositório
+## 1. Clonando o Repositório
 
-  1.1 Para baixar o repositório, execute:
-  ```bash
-  $ git clone git@github.com:achievemore/vaga-dev-frontend.git
-  ```
+1. Realize um **fork** deste repositório clicando no botão **Fork** no canto superior direito da página.
+
+2. Após criar o fork, realize um clone do projeto localmente. Execute o comando abaixo no terminal, substituindo `seu_usuario_git` pelo seu nome de usuário no GitHub:
+
+   ```bash
+   git clone git@github.com:seu_usuario_git/vaga-dev-frontend.git
+
 ### 2. Inicie o Projeto:
 
   2.1 Para entrar na pasta do projeto, digite:
