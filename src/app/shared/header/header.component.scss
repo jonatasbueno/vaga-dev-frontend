@@ -1,0 +1,44 @@
+.header {
+  width: 100%;
+  padding: 12px;
+}
+
+.logo-home {
+  width: 100%;
+  border-radius: 12px;
+  filter: brightness(0.6)
+}
+
+.top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  width: 100%;
+  top: 24px;
+}
+
+.logo {
+  width: 202px;
+  height: 21px;
+  font-family: 'Open Sans';
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 29px;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 4px;
+  color: #FFFFFF;
+  font-size: 14px;
+}

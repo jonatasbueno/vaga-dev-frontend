@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  position: absolute;
+  width: 377px;
+  height: 91px;
+  left: calc(50% - 377px/2 - 0.5px);
+  bottom: 16px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 50px;
+
+  a {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 16px;
+    color: #8392AB;
+    text-decoration: none;
+  }
+}
+
+.copyright {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 14px;
+  color: #8392AB;
+}
