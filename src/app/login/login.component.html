@@ -10,14 +10,14 @@
         <h3>Área restrita</h3>
         <p>Digite seu e-mail e senha para entrar</p>
       </div>
-      <form>
+      <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="email">E-mail</label>
-          <input type="email" id="email" placeholder="Digite seu E-mail">
+          <input type="email" id="email" formControlName="email" placeholder="Digite seu E-mail">
         </div>
         <div class="form-group">
           <label for="password">Senha</label>
-          <input type="password" id="password" placeholder="Digite sua senha">
+          <input type="password" id="password" formControlName="password" placeholder="Digite sua senha">
         </div>
         <div class="remember-me">
           <label>
