@@ -1,5 +1,23 @@
 $heigth: 236px;
 
+@mixin border-botom {
+  border-bottom: 1px solid rgba(222, 226, 230, 1);
+}
+
+@mixin input-style {
+  width: 240px;
+  height: 42px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 1);
+  padding-left: 16px;
+  color: #000;
+  border: 1px solid #E9ECEF;
+
+  &::placeholder {
+    color: #8392AB;
+  }
+}
+
 .private {
   width: 100vw;
   height: 100vh;
@@ -62,6 +80,7 @@ $heigth: 236px;
       display: flex;
       justify-content: space-between;
       width: 100%;
+      margin-bottom: 48px;
 
       .path {
         width: 193px;
@@ -90,12 +109,7 @@ $heigth: 236px;
         gap: 24px;
 
         input {
-          width: 240px;
-          height: 42px;
-          border-radius: 8px;
-          background: rgba(255, 255, 255, 1);
-          padding-left: 16px;
-          color: #000;
+          @include input-style()
         }
 
         .info-menu {
@@ -112,5 +126,81 @@ $heigth: 236px;
         }
       }
     }
+
+    .table {
+      color: #000;
+      background-color: #FFF;
+      border-radius: 12px;
+      min-height: 190px;
+
+      .titles {
+        padding: 24px;
+        @include border-botom();
+
+        h1 {
+          font-size: 20px;
+          font-weight: 600;
+        }
+
+        h2 {
+          font-size: 14px;
+        }
+      }
+
+      .filters {
+        @include border-botom();
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 24px;
+
+        .pages {
+          display: flex;
+          gap: 4px;
+          align-items: center;
+
+          select {
+            color: #8392AB;
+            font-size: 14px;
+            border-radius: 4px;
+            padding: 6px;
+            border: 1px solid #E9ECEF;
+            position: relative;
+          }
+
+          p {
+            font-size: 12px;
+            color: #8392AB;
+          }
+        }
+
+        input {
+          @include input-style()
+        }
+      }
+    }
+  }
+}
+
+table {
+  width: 100%;
+
+  tr {
+    border-bottom: 1px solid rgb(222, 226, 230);
+  }
+
+  td {
+    font-size: 14px;
+    color: #8392AB;
+    line-height: 21px;
+    padding: 16px 24px;
+  }
+
+  th {
+    color: #8392AB;
+    font-weight: 700;
+    font-size: 10px;
+    text-align: left;
+    padding: 12px 24px;
   }
 }

@@ -1,0 +1,20 @@
+<div class="pagination-container">
+  <!-- <div class="info">Mostrando {{ (this.registerService.registers()?.page - 1) *
+    this.registerService.registers()?.per_page
+    + 1 }} a {{ Math.min(this.registerService.registers()?.page
+    * this.registerService.registers()?.per_page, this.registerService.registers()?.total) }} de {{
+    this.registerService.registers()?.total }} entradas</div> -->
+
+  <div class="pagination-controls">
+    <button (click)="changePage(this.registerService.registers()?.page - 1)"
+      [disabled]="this.registerService.registers()?.page === 1">&lt;</button>
+
+    <button *ngFor="let p of [].constructor(this.registerService.registers()?.total_pages); let i = index"
+      [class.active]="this.registerService.registers()?.page === i + 1" (click)="changePage(i + 1)">
+      {{ i + 1 }}
+    </button>
+
+    <button (click)="changePage(this.registerService.registers()?.page + 1)"
+      [disabled]="this.registerService.registers()?.page === this.registerService.registers()?.total_pages">&gt;</button>
+  </div>
+</div>

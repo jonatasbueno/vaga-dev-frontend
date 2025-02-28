@@ -8,7 +8,7 @@ const TOKEN = 'token'
   providedIn: 'root',
 })
 export class DataService {
-  url = "https://reqres.in/api/login"
+  private url = "https://reqres.in/api/login"
   registers = signal<any>(null)
   token = signal<any>(null)
   private http = inject(HttpClient)

@@ -1,3 +1,9 @@
+@mixin font-footer {
+  font-weight: 400;
+  font-size: 14;
+  color: #8392AB;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -10,6 +16,22 @@
   bottom: 16px;
 }
 
+.private-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100vw - 397px);
+  bottom: 16px;
+  position: fixed;
+
+  .politics {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    color: #8392AB;
+  }
+}
+
 .links {
   display: flex;
   flex-direction: row;
@@ -17,17 +39,11 @@
   gap: 50px;
 
   a {
-    font-family: 'Open Sans';
-    font-weight: 400;
+    @include font-footer();
     font-size: 16px;
-    color: #8392AB;
-    text-decoration: none;
   }
 }
 
 .copyright {
-  font-family: 'Open Sans';
-  font-weight: 400;
-  font-size: 14px;
-  color: #8392AB;
+  @include font-footer();
 }

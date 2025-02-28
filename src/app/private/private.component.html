@@ -7,11 +7,6 @@
   <div class="menu">
     <h1 class="heading">Vaga Front-end AchieveMore</h1>
     <div class="divider"></div>
-    <!-- <div class="item">
-      <img />
-      <p>Dashboard</p>
-      <img src="" alt="">
-    </div> -->
   </div>
 
   <div class="right-side">
@@ -35,6 +30,50 @@
         </div>
       </div>
     </div>
-    <div class="table"></div>
+    <div class="table">
+      <div class="titles">
+        <h1>Listagem de usuários</h1>
+        <h2>Visualização dos usuários cadastrados.</h2>
+      </div>
+      <div class="filters">
+        <div class="pages">
+          <select (change)="changePage($event)">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+          </select>
+          <p>entradas por página</p>
+        </div>
+        <input placeholder="Pesquise aqui..." />
+      </div>
+      <div>
+      </div>
+      <table class="registers">
+        <thead>
+          <tr>
+            <th>
+              First Name
+            </th>
+            <th>
+              Last Name
+            </th>
+            <th>
+              Email
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of this.registerService.registers()?.data; track item.id) {
+          <tr>
+            <td>{{ item.first_name }}</td>
+            <td>{{ item.last_name }}</td>
+            <td>{{ item.email }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+      <app-pagination></app-pagination>
+    </div>
+    <app-footer [inPagePrivate]="isPrivate"></app-footer>
   </div>
 </div>

@@ -1,0 +1,46 @@
+.pagination-container {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  padding: 10px 16px;
+
+  .info {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+
+  .pagination-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    button {
+      width: 35px;
+      height: 35px;
+      border: none;
+      background: transparent;
+      border-radius: 50%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+      border: 1px solid #8392AB;
+
+      &:hover {
+        background: #e0e0e0;
+      }
+
+      &.active {
+        background: linear-gradient(124deg, #5E72E4 -1.8%, #825EE4 105.23%);
+        color: white;
+        border: 1px solid #8392AB;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        border: 1px solid #8392AB;
+      }
+    }
+  }
+}

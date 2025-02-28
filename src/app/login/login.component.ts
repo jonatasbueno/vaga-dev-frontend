@@ -18,6 +18,7 @@ import { DataService } from '../services/data.service';
 export class LoginComponent {
   authForm: FormGroup
   dataService = inject(DataService)
+  isPrivate = false
   private router = inject(Router)
 
   constructor(
