@@ -1,0 +1,18 @@
+<footer *ngIf="!isLogged" class="login-footer">
+  <div class="login-politics">
+    <div>
+      <p>Política de Privacidade</p>
+      <p>Política de Segurança</p>
+    </div>
+  </div>
+  <p class="login-all-rights">© 2024 AchieveMore - Todos os direitos reservados.</p>
+</footer>
+
+<footer *ngIf="isLogged" class="dashboard-footer">
+  <p class="dashboard-all-rights">© 2024 AchieveMore - Todos os direitos reservados.</p>
+
+  <div class="dashboard-politics">
+    <p>Política de Privacidade</p>
+    <p>Política de Segurança</p>
+  </div>
+</footer>
