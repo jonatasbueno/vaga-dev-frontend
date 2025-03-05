@@ -1,0 +1,17 @@
+<div class="pagination-container">
+  <span class="pagination-info">
+    Mostrando {{ getStartItem() }} a {{ getEndItem() }} de {{ totalItems }} entradas
+  </span>
+  <div class="pagination-controls">
+    <button class="pagination-button prev" (click)="onPrev()" [disabled]="currentPage === 1">
+      &lt;
+    </button>
+    <button *ngFor="let page of pages" class="pagination-button page" [class.active]="page === currentPage"
+      (click)="onPageChange(page)">
+      {{ page }}
+    </button>
+    <button class="pagination-button next" (click)="onNext()" [disabled]="currentPage === totalPages">
+      &gt;
+    </button>
+  </div>
+</div>

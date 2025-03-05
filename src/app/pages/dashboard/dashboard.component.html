@@ -107,8 +107,13 @@
             </tbody>
           </table>
         </div>
-        <div class="pagination"></div>
+        <div class="pagination">
+          <app-pagination [totalItems]="57" [itemsPerPage]="10" [currentPage]="currentPage"
+            (pageChange)="onPageChange($event)"></app-pagination>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-footer [isLogged]="true"></app-footer>
