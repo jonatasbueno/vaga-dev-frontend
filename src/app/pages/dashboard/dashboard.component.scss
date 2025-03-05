@@ -36,7 +36,15 @@ $cell-table: 16px 24px;
     text-align: center;
 
     margin-top: 9px;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
+  }
+
+  .divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #E0E1E2, rgba(255, 255, 255, 0));
+    margin: 16px 0;
+    width: 100%;
   }
 }
 

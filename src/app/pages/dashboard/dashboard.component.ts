@@ -6,11 +6,12 @@ import { PaginationComponent } from '../../shared/components/pagination/paginati
 import { FooterComponent } from "../../shared/components/footer/footer.component";
 import { UsersService } from '../../shared/state/users/users.service';
 import { User } from '../../shared/state/users/types';
+import { SidebarComponent } from '../../shared/components/sidebar/sidebar.component';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [InputStyleDirective, PaginationComponent, FooterComponent, CommonModule],
+  imports: [InputStyleDirective, PaginationComponent, FooterComponent, CommonModule, SidebarComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

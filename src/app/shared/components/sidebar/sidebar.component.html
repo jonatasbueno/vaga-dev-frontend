@@ -1,0 +1,16 @@
+<nav class="sidebar-nav">
+  <ul>
+    <li *ngFor="let item of navItems; let i = index">
+      <button class="nav-item" [class.has-submenu]="item.hasSubmenu" (click)="item.hasSubmenu && toggleSubmenu(i)">
+        <img class="nav-icon" [src]="item.icon">
+        <span class="nav-label">{{ item.label }}</span>
+        <span class="nav-arrow" *ngIf="item.hasSubmenu">▼</span>
+      </button>
+      <ul class="submenu" *ngIf="item.hasSubmenu && isOpen(i)">
+        <li *ngFor="let subItem of item.subItems">
+          <a class="submenu-item" href="#">{{ subItem.label }}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
