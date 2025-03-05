@@ -16,6 +16,5 @@ export enum AuthState {
 
 export interface AuthStatus {
   token: string | null;
-  state: AuthState;
   isAuthenticated: boolean;
 }

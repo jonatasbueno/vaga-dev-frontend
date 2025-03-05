@@ -13,13 +13,12 @@ export class AuthService {
   private pathEndpoint = `${URL_PREFIX}/login`;
   private authStatus = signal<AuthStatus>({
     token: this.tokenLocalStorage || null,
-    state: AuthState.IDLE,
     isAuthenticated: !!this.tokenLocalStorage
   });
 
   constructor(private http: HttpClient) {
     effect(() => {
-      const { isAuthenticated, token, state } = this.authStatus();
+      const { isAuthenticated, token } = this.authStatus();
 
       token
         ? localStorage.setItem('token', token)
@@ -30,20 +29,12 @@ export class AuthService {
           ...current,
           isAuthenticated: !!current.token
         }));
-
-      state === AuthState.ERROR &&
-        this.authStatus.update(current => ({
-          ...current,
-          token: null,
-          isAuthenticated: false
-        }));
     });
   }
 
   private onError() {
     this.authStatus.update(status => ({
       ...status,
-      state: AuthState.ERROR,
       isAuthenticated: false
     }));
   }
@@ -54,8 +45,7 @@ export class AuthService {
 
   login(credentials: LoginCredentials): void {
     this.authStatus.update(status => ({
-      ...status,
-      state: AuthState.LOADING
+      ...status
     }));
 
     this.http
@@ -63,8 +53,7 @@ export class AuthService {
       .pipe(
         catchError(error => {
           this.authStatus.update(status => ({
-            ...status,
-            state: AuthState.ERROR
+            ...status
           }));
           return of(null);
         })
@@ -74,7 +63,6 @@ export class AuthService {
           response?.token
             ? this.authStatus.set({
               token: response.token,
-              state: AuthState.SUCCESS,
               isAuthenticated: true
             })
             : this.onError();
@@ -89,7 +77,6 @@ export class AuthService {
   logout() {
     this.authStatus.set({
       token: null,
-      state: AuthState.IDLE,
       isAuthenticated: false
     });
   }

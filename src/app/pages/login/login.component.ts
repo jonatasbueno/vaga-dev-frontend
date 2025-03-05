@@ -7,7 +7,7 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 import { InputStyleDirective } from '../../shared/diretivas/InputStyle/input-style.directive';
 import { ToggleComponent } from '../../shared/components/toggle/toggle.component';
 import { AuthService } from '../../shared/state/auth/auth.service';
-import { AuthState, AuthStatus } from '../../shared/state/auth/types';
+import { AuthStatus } from '../../shared/state/auth/types';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ import { AuthState, AuthStatus } from '../../shared/state/auth/types';
 })
 export class LoginComponent {
   form: FormGroup;
-  authState: AuthStatus = { state: AuthState.IDLE, isAuthenticated: false, token: null }
+  authState: AuthStatus = { isAuthenticated: false, token: null }
   authService = inject(AuthService)
   router = inject(Router)
 

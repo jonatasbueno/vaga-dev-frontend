@@ -26,7 +26,8 @@
         </div>
         <div class="filter">
           <div class="options">
-            <select>
+            <select (change)="onPerPageChange($event)">
+              <option value="5" selected>5</option>
               <option value="10" selected>10</option>
               <option value="25">25</option>
               <option value="50">50</option>
@@ -39,76 +40,24 @@
           <table>
             <thead>
               <tr>
+                <th>#</th>
                 <th>Nome</th>
-                <th>Cargo</th>
-                <th>Escritório</th>
-                <th>Idade</th>
-                <th>Data de Início</th>
-                <th>Salário</th>
+                <th>Sobrenome</th>
+                <th>Email</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Lucas Andrade</td>
-                <td>Diretor</td>
-                <td>São Paulo</td>
-                <td>61</td>
-                <td>12/02/1952</td>
-                <td>R$ 100.000</td>
-              </tr>
-              <tr>
-                <td>Mariana Oliveira</td>
-                <td>Coordenador</td>
-                <td>São Paulo</td>
-                <td>42</td>
-                <td>20/10/2020</td>
-                <td>R$ 15.000</td>
-              </tr>
-              <tr>
-                <td>Gustavo Pereira</td>
-                <td>Coordenador</td>
-                <td>São Paulo</td>
-                <td>36</td>
-                <td>13/06/2022</td>
-                <td>R$ 15.000</td>
-              </tr>
-              <tr>
-                <td>Isabela Souza</td>
-                <td>Supervisor</td>
-                <td>São Paulo</td>
-                <td>25</td>
-                <td>18/01/2019</td>
-                <td>R$ 8.000</td>
-              </tr>
-              <tr>
-                <td>Pedro Martins</td>
-                <td>Assistente</td>
-                <td>São Paulo</td>
-                <td>37</td>
-                <td>30/03/2018</td>
-                <td>R$ 3.500</td>
-              </tr>
-              <tr>
-                <td>Sofia Ferreira</td>
-                <td>TI</td>
-                <td>São Paulo</td>
-                <td>22</td>
-                <td>30/03/2019</td>
-                <td>R$ 5.800</td>
-              </tr>
-              <tr>
-                <td>Ricardo Silva</td>
-                <td>TI</td>
-                <td>São Paulo</td>
-                <td>19</td>
-                <td>30/03/2023</td>
-                <td>R$ 5.800</td>
+              <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName}}</td>
+                <td>{{ user.email}}</td>
               </tr>
             </tbody>
           </table>
         </div>
         <div class="pagination">
-          <app-pagination [totalItems]="57" [itemsPerPage]="10" [currentPage]="currentPage"
+          <app-pagination [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [currentPage]="currentPage"
             (pageChange)="onPageChange($event)"></app-pagination>
         </div>
       </div>
