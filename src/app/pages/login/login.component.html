@@ -18,31 +18,36 @@
     <p>Use esse formulário para fazer login</p>
   </div>
 
-  <div class="login">
-    <div class="login-form">
-      <div class="form-title">
-        <h1>Área Restrita</h1>
-        <p>Digite seu e-mail e senha para entrar</p>
-      </div>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="login">
+      <div class="login-form">
+        <div class="form-title">
+          <h1>Área Restrita</h1>
+          <p>Digite seu e-mail e senha para entrar</p>
+        </div>
 
-      <div class="form-group">
-        <label for="email">E-mail</label>
-        <input appInputStyle id="email" type="text" placeholder="Digite seu E-mail" />
-      </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input appInputStyle formControlName="email" id="email" type="text" placeholder="Digite seu E-mail" />
+        </div>
 
-      <div class="form-group">
-        <label for="password">Senha</label>
-        <input appInputStyle id="password" type="password" placeholder="Digite sua senha" />
-      </div>
+        <div class="form-group">
+          <label for="password">Senha</label>
+          <input appInputStyle formControlName="password" id="password" type="password"
+            placeholder="Digite sua senha" />
+        </div>
 
-      <div class="form-toogle">
-        <app-toggle></app-toggle>
-        <p>Esqueceu sua senha</p>
-      </div>
+        <div class="form-toogle">
+          <app-toggle></app-toggle>
+          <p>Esqueceu sua senha</p>
+        </div>
 
-      <button>Entrar</button>
+        <button type="submit">Entrar</button>
+      </div>
     </div>
-  </div>
+  </form>
+
+  {{ authState | json }}
 
   <app-footer [isLogged]="false"></app-footer>
 </div>
